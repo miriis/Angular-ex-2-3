@@ -1,3 +1,4 @@
+<!--ex 2-3
 <div class="container">
   <ol *ngFor="let user of users; index as i">{{i+1}}
     <img class="img" [src]="user.profilePhotoUrl" width=120px height=70px>
@@ -5,4 +6,8 @@
     <span> {{ user.age }}</span>
     <span> {{ user.address.city }}</span>
   </ol>
+</div> -->
+<div class="container">
+<app-user-single [users]='users'></app-user-single>
+<!-- <p>try</p> -->
 </div>
