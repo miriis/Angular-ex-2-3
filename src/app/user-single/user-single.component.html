@@ -1,6 +1,11 @@
-<div class="container" *ngFor="let user of users">
+<div *ngIf="utenti.length > 0; else noUser">
+<div class="container" *ngFor="let user of utenti" [ngClass]="changeBorder(user.role)">
   <img class="img" [src]="user.profilePhotoUrl" width=120px height=70px>
   <p>{{user.name}} {{user.surname}}</p>
   <p>{{user.age}}</p>
   <p>{{user.address.city}}</p>
+<button (click)='remove.emit(user)'>Rimuovi</button>
 </div>
+</div>
+
+<ng-template #noUser>Elementi non disponibili</ng-template>

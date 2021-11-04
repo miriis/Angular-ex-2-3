@@ -8,6 +8,6 @@
   </ol>
 </div> -->
 <div class="container">
-<app-user-single [users]='users'></app-user-single>
+<app-user-single [utenti]='users' (remove)='removeUser($event)'></app-user-single>
 <!-- <p>try</p> -->
 </div>
