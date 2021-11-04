@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from '../models/user';
 
 @Component({
@@ -8,11 +8,24 @@ import { User } from '../models/user';
 })
 
 export class UserSingleComponent implements OnInit {
-  @Input() users: User[] = [];
+  @Input() utenti: User[] = [];
+  @Output() remove = new EventEmitter<User>();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  changeBorder(param:any) {
+    console.log(param);
+    switch(param) {
+      /* case 0: return 'pink';
+      case 1: return 'orange';
+      default: return 'red'; */
+      case 0: return 'border border-danger';
+      case 1: return 'border border-success';
+      default: return 'border border-dark';
+    }
   }
 
 }
